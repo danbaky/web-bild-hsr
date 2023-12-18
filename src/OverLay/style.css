@@ -1,0 +1,39 @@
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+
+
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.active {
+      transform: scale(1);
+      opacity: 1;
+      pointer-events: all;
+    };
+
+  }
+
+  .modal {
+    background-color: var(--ultra-violet);
+    padding: 20px;
+
+    /* width: 50vw;
+    height: 90vh; */
+
+    border-radius: 10px;
+
+    position: fixed;
+
+    display: grid;
+    gap: 2vmin;
+    grid-template-columns: auto auto auto auto auto auto;
+  }
