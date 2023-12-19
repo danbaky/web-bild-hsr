@@ -4,7 +4,18 @@ import React, { useState } from 'react';
 import { Characters,Relics,PlanarOrbs } from "../Data/data";
 import { Bild } from "../Data/data";
 
-export const Bilds = () => {
+
+interface Iprops {
+    bilds: Bild[],
+    remover: (name: string) => void 
+}
+export const Bilds : React.FC<Iprops> = ({bilds, remover}) => {
+    return (
+        <div id="content">
+            {bilds.map(bild => <CharCard myKey={bild.name} bild={bild} remover={remover}/>)}
+        </div>
+)
+}
 
     // const bilds: Bild[] = [
     //     {
@@ -13,16 +24,6 @@ export const Bilds = () => {
     //         relic1: Relics.KnightOfPurityPalace,
     //         relic2: Relics.LongevousDisciple,
     //         planar: PlanarOrbs.BrokenKeel,
-    //         cone1: "cone1",
-    //         cone2: "cone2",
-    //         textInformation: "Описание"
-    //     },
-    //     {
-    //         name: "Название Билда2",
-    //         character: Characters.Dan_Heng__Imbibitor_Lunae,
-    //         relic1: Relics.HunterOfGlacialForest,
-    //         relic2: Relics.PasserbyOfWanderingCloud,
-    //         planar: PlanarOrbs.SprightlyVonwacq,
     //         cone1: "cone1",
     //         cone2: "cone2",
     //         textInformation: "Описание"
@@ -40,16 +41,3 @@ export const Bilds = () => {
 
     // localStorage.setItem("Bilds", JSON.stringify(bilds))
     // console.log(bilds)
-
-    const [bilds, setBilds] = useState<Bild[]>(JSON.parse(localStorage.getItem("Bilds") || '{}' ))
-    
-    const addBildToList = (bild:Bild) => {
-        setBilds([...bilds, bild])
-    }
-
-    return (
-            <div id="content">
-                {bilds.map(bild => <CharCard key={bild.name} bild={bild} />)}
-            </div>
-    )
-}

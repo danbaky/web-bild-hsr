@@ -1,5 +1,3 @@
-// Я ШИЗИК
-
 import Argenti_Splash_Art from "./Arts/Character_Argenti_Splash_Art.webp"
 import Arlan_Splash_Art from "./Arts/Character_Arlan_Splash_Art.webp"
 import Asta_Splash_Art from "./Arts/Character_Asta_Splash_Art.webp"

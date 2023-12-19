@@ -5,14 +5,18 @@ import item from "./img/Item_Rutilant_Arena.webp";
 import { data, Bild, Relics, PlanarOrbs } from "../Data/data";
 
 
-
-export const CharCard = ({ bild }: {bild:Bild}) => {
+interface Iprops {
+    myKey:string,
+    bild: Bild,
+    remover: (name: string)=> void    
+}
+export const CharCard: React.FC<Iprops> = ({myKey, bild, remover}) => {
 
     return (
 
-        <div className="char_card">
+        <div className="char_card" key={myKey}>
 
-            <div className="pic card">
+            <div className="pic card" >
                 <img src={data.Arts[`${bild.character}_Splash_Art`]} alt={bild.character} width={400} />
                 <h4>{bild.character}</h4>
                 <p>{bild.name}</p>
@@ -30,6 +34,7 @@ export const CharCard = ({ bild }: {bild:Bild}) => {
                     <img src={cone} width={150} />
                 </div>
             </div>
+
             <div className="items">
                 <div className="item card">
                     <img src={data.Relics[bild.relic1]} width={100} />
@@ -42,6 +47,11 @@ export const CharCard = ({ bild }: {bild:Bild}) => {
 
                 </div>
             </div>
+            
+            <button onClick={()=>remover(myKey)}>
+                Удалить билд
+            </button>
+
         </div>
     )
 }
