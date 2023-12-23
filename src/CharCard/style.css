@@ -15,17 +15,73 @@
     /* box-sizing: border-box; */
     /* justify-content: space-around; */
 }
+
+@media (max-width: 1250px) {
+    .char_card{
+        padding: 2vmin;
+        /* height: 50vmin; */
+        background-color: var(--ultra-violet);
+        color:rgb(0, 0, 0);
+        border-radius: 10px;
+        border: 2px solid #1baace;
+    
+        display: grid;
+        grid-template-columns: 400px auto;
+        grid-template-rows: auto auto 120px;
+        gap: 2vmin;
+    
+        margin: 1vmin 0vmin;
+        /* box-sizing: border-box; */
+        /* justify-content: space-around; */
+    }
+
+}
+@media (max-width: 750px) {
+    .char_card{
+        padding: 2vmin;
+        /* height: 50vmin; */
+        background-color: var(--ultra-violet);
+        color:rgb(0, 0, 0);
+        border-radius: 10px;
+        border: 2px solid #1baace;
+    
+        display: grid;
+        grid-template-columns: 400px;
+        /* grid-template-rows: auto auto 120px; */
+        gap: 2vmin;
+    
+        margin: 1vmin 0vmin;
+        /* box-sizing: border-box; */
+        justify-content: center;
+    }
+
+}
 textarea {
     background-color: var(--vista-blue);
     font-family: 'Unbounded', sans-serif;
     border: 0;
     border-radius: 10px;
-    min-width: 100%;
-    min-height: 100%;
+    /* min-width: 100%;
+    min-height: 100%; */
     resize: none;
     &:focus, input:focus{
         outline: none;
     }
+}
+input{
+    background-color: var(--vista-blue);
+    font-family: 'Unbounded', sans-serif;
+    &:focus, input:focus{
+        outline: none;
+    }
+    border: 0;
+    border-radius: 10px;
+
+}
+button{
+    font-family: 'Unbounded', sans-serif;
+    border: 0;
+
 }
 
 /* Стили для карточек */
@@ -49,10 +105,10 @@ textarea {
 
 
 /* Все что должно группироваться в под таблицуы */
+/* таблицу в таблице надо убрать */
 .items {
     display: grid;
     grid-template-columns: auto auto auto;
-
     gap: 2vmin;
 }
 .cones {
@@ -62,7 +118,7 @@ textarea {
 }
 .text {
     /* display: flex; */
-    grid-row: span 2;
+    /* grid-row: span 2; */
 }
 
 /* -------------------------------------------ОВЕРЛЕЙ ---------------*/

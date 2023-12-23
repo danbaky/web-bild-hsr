@@ -14,6 +14,8 @@ function App() {
 
   const [bildsList, setBildsList] = useState<Bild[]> (JSON.parse(localStorage.getItem("Bilds") || '{}' ))
 
+
+  // Как айди лучше использовать дату
   const removeBildByName = (name:string) :void =>  {
       setBildsList(current => current.filter(el => el.name != name))
   }

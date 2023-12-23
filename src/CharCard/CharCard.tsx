@@ -47,10 +47,16 @@ export const CharCard: React.FC<Iprops> = ({myKey, bild, remover}) => {
 
                 </div>
             </div>
-            
-            <button onClick={()=>remover(myKey)}>
+            <div className="controls card">
+            <button className="btm" onClick={()=>remover(myKey)}>
                 Удалить билд
             </button>
+            <button className="btm">
+                Редактировать(Пока в разработке)
+            </button>
+
+            </div>
+
 
         </div>
     )

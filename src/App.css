@@ -3,7 +3,9 @@
 --davys-gray: #4D4E57ff;
 --white: #FEFDFDff;
 --vista-blue: #909BCEff;
---jet: #313237ff;
+
+/* кнпки */
+--jet: rgb(65, 69, 88);
 --white-2: #FEFEFEff;
 --ultra-violet: #55609Dff;
 /* @import url('https://fonts.googleapis.com/css2?family=Russo+One&family=Space+Mono&display=swap'); */
@@ -21,6 +23,10 @@
 *{
   /* background-color: bisque; */
 }
+body{
+  background-color: var(--ultra-violet);
+
+}
 
 #nav{
   background-color: var(--davys-gray);
@@ -37,7 +43,8 @@
   display: flex;  
   align-items: center;
   justify-content: center;
-  border-radius: 3vmin;
+  border-radius: 15px;
+  
   margin: 2vmin 2vmin;
   box-shadow: 0 1vmin 15px 0 rgba(0, 0, 0, 0.479);
   text-decoration: none;

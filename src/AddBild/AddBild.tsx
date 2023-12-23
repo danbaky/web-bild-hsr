@@ -11,16 +11,14 @@ interface Iprops {
 }
 export const AddBild = ({bildList, setBildsList}:Iprops) => {
 
-    const addBildInList = () => {
-        setBildsList((cur) => [bild, ...cur])
-        console.log('Добавил в список', bild)
-        setBild(defaultBild)
-    }
+
     //Стейты для модальных окон
     const [isOpenRelic, setOpenRelic] = useState(false);
     const [isOpenRelic2, setOpenRelic2] = useState(false);
     const [isOpenPlanar, setOpenPlanar] = useState(false);
     const [isHero, setOpenHero] = useState(false);
+
+
     //состояние предметов + дефолтные значения
     const defaultBild: Bild = {
         name: "",
@@ -43,6 +41,32 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
 
     const [textArea, setTextArea] = useState(bild.textInformation)
     const [textInput, setTextInput] = useState(bild.name)
+
+
+
+    const addBildInList = () => {
+        setBildsList((cur) => [bild, ...cur])
+        console.log('Добавил в список', bild)
+        setBild(defaultBild)
+        console.log(bild)
+    }
+
+
+    //Связываю все стейты с одинм. Видимо лучше было завести один bild без стейтов 
+    React.useEffect(()=>{
+        setFirstRelic(bild.relic1)
+        setSecondRelic(bild.relic2)
+        setHero({
+            name: bild.character,
+            art: data.Arts[`${bild.character}_Splash_Art`]})
+        setPlanar(bild.planar)
+        setFirstRelic(bild.relic1)
+        setTextArea(bild.textInformation)
+
+        setTextInput(bild.name)
+    }, [bild])
+
+
 
     const saveTextInput = (text:string): void => {
         setTextInput(text)
@@ -86,13 +110,13 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
     },[textArea, textInput, firstRelic, secondRelic, planar, hero.name])
     
     return (
-        <>
+        <div className="content">
             <div className="char_card" >
 
                 <div className="pic card">
                     <img src={hero.art} width={400} onClick={() => setOpenHero(true)}/>
                     <h4>{hero.name}</h4>
-                    <input type="text" defaultValue={textInput} onChange={(e)=>saveTextInput(e.target.value)} placeholder="Имя билда"/>
+                    <input type="text" value={textInput} onChange={(e)=>setTextInput(e.target.value)} placeholder="Имя билда"/>
                 </div>
 
                 <div className="text card">
@@ -121,7 +145,7 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
                     </div>
                 </div>
             </div >
-            <button onClick={addBildInList}>
+            <button className="btm" onClick={addBildInList}>
                 Добавить
             </button>
 
@@ -172,6 +196,6 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
                     })
                 }
             </Overlay>
-        </>
+        </div>
     )
 }
