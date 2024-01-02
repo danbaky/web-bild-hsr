@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/web-bild-hsr/static/css/main.2d369783.css",
-    "main.js": "/web-bild-hsr/static/js/main.54b518f0.js",
+    "main.css": "/web-bild-hsr/static/css/main.bb763a91.css",
+    "main.js": "/web-bild-hsr/static/js/main.78ea6eb2.js",
     "static/media/Character_Welt_Splash_Art.webp": "/web-bild-hsr/static/media/Character_Welt_Splash_Art.6a9419a54509f512290e.webp",
     "static/media/Character_Huohuo_Splash_Art.webp": "/web-bild-hsr/static/media/Character_Huohuo_Splash_Art.a64cfdd7fc53b0969652.webp",
     "static/media/Character_Pela_Splash_Art.webp": "/web-bild-hsr/static/media/Character_Pela_Splash_Art.a5cadcabfe7d509a37ba.webp",
@@ -71,11 +71,11 @@
     "static/media/Item_Penacony,_Land_of_the_Dreams.webp": "/web-bild-hsr/static/media/Item_Penacony,_Land_of_the_Dreams.87f511af965309d086db.webp",
     "static/media/Item_Band_of_Sizzling_Thunder.webp": "/web-bild-hsr/static/media/Item_Band_of_Sizzling_Thunder.fa674f02b19028a5b7e4.webp",
     "index.html": "/web-bild-hsr/index.html",
-    "main.2d369783.css.map": "/web-bild-hsr/static/css/main.2d369783.css.map",
-    "main.54b518f0.js.map": "/web-bild-hsr/static/js/main.54b518f0.js.map"
+    "main.bb763a91.css.map": "/web-bild-hsr/static/css/main.bb763a91.css.map",
+    "main.78ea6eb2.js.map": "/web-bild-hsr/static/js/main.78ea6eb2.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d369783.css",
-    "static/js/main.54b518f0.js"
+    "static/css/main.bb763a91.css",
+    "static/js/main.78ea6eb2.js"
   ]
 }
