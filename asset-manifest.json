@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/web-bild-hsr/static/css/main.e519b54e.css",
-    "main.js": "/web-bild-hsr/static/js/main.d1bf5fe8.js",
+    "main.js": "/web-bild-hsr/static/js/main.8b7adaba.js",
     "static/media/Character_Welt_Splash_Art.webp": "/web-bild-hsr/static/media/Character_Welt_Splash_Art.6a9419a54509f512290e.webp",
     "static/media/Character_Huohuo_Splash_Art.webp": "/web-bild-hsr/static/media/Character_Huohuo_Splash_Art.a64cfdd7fc53b0969652.webp",
     "static/media/Character_Pela_Splash_Art.webp": "/web-bild-hsr/static/media/Character_Pela_Splash_Art.a5cadcabfe7d509a37ba.webp",
@@ -72,10 +72,10 @@
     "static/media/Item_Band_of_Sizzling_Thunder.webp": "/web-bild-hsr/static/media/Item_Band_of_Sizzling_Thunder.fa674f02b19028a5b7e4.webp",
     "index.html": "/web-bild-hsr/index.html",
     "main.e519b54e.css.map": "/web-bild-hsr/static/css/main.e519b54e.css.map",
-    "main.d1bf5fe8.js.map": "/web-bild-hsr/static/js/main.d1bf5fe8.js.map"
+    "main.8b7adaba.js.map": "/web-bild-hsr/static/js/main.8b7adaba.js.map"
   },
   "entrypoints": [
     "static/css/main.e519b54e.css",
-    "static/js/main.d1bf5fe8.js"
+    "static/js/main.8b7adaba.js"
   ]
 }
