@@ -176,6 +176,7 @@ export const allRelics: Relics[] = [
     Relics.WastelanderOfBanditryDesert
 ]
 export interface Bild {
+    id:string
     name: string,
     character: Characters,
     relic1: Relics,
@@ -191,85 +192,45 @@ export interface Hero {
 }
 
 export const allHeros: Hero[] = [
-
     { name: Characters.Argenti, art: Argenti_Splash_Art },
-
     { name: Characters.Arlan, art: Arlan_Splash_Art },
-
     { name: Characters.Asta, art: Asta_Splash_Art },
-
     { name: Characters.Bailu, art: Bailu_Splash_Art },
-
     { name: Characters.Blade, art: Blade_Splash_Art },
-
     { name: Characters.Bronya, art: Bronya_Splash_Art },
-
     { name: Characters.Clara, art: Clara_Splash_Art },
-
     { name: Characters.Dan_Heng__Imbibitor_Lunae, art: Dan_Heng__Imbibitor_Lunae_Splash_Art },
-
     { name: Characters.Dan_Heng, art: Dan_Heng_Splash_Art },
-
     { name: Characters.Fu_Xuan, art: Fu_Xuan_Splash_Art },
-
     { name: Characters.Gepard, art: Gepard_Splash_Art },
-
     { name: Characters.Guinaifen, art: Guinaifen_Splash_Art },
-
     { name: Characters.Hanya, art: Hanya_Splash_Art },
-
     { name: Characters.Herta, art: Herta_Splash_Art },
-
     { name: Characters.Himeko, art: Himeko_Splash_Art },
-
     { name: Characters.Hook, art: Hook_Splash_Art },
-
     { name: Characters.Huohuo, art: Huohuo_Splash_Art },
-
     { name: Characters.Jing_Yuan, art: Jing_Yuan_Splash_Art },
-
     { name: Characters.Jingliu, art: Jingliu_Splash_Art },
-
     { name: Characters.Kafka, art: Kafka_Splash_Art },
-
     { name: Characters.Luka, art: Luka_Splash_Art },
-
     { name: Characters.Luocha, art: Luocha_Splash_Art },
-
     { name: Characters.Lynx, art: Lynx_Splash_Art },
-
     { name: Characters.March_7th, art: March_7th_Splash_Art },
-
     { name: Characters.Natasha, art: Natasha_Splash_Art },
-
     { name: Characters.Pela, art: Pela_Splash_Art },
-
     { name: Characters.Qingque, art: Qingque_Splash_Art },
-
     { name: Characters.Sampo, art: Sampo_Splash_Art },
-
     { name: Characters.Seele, art: Seele_Splash_Art },
-
     { name: Characters.Serval, art: Serval_Splash_Art },
-
     { name: Characters.Silver_Wolf, art: Silver_Wolf_Splash_Art },
-
     { name: Characters.Sushang, art: Sushang_Splash_Art },
-
     { name: Characters.Tingyun, art: Tingyun_Splash_Art },
-
     { name: Characters.Topaz_and_Numby, art: Topaz_and_Numby_Splash_Art },
-
     { name: Characters.Trailblazer_Destruction, art: Trailblazer_Destruction_Splash_Art },
-
     { name: Characters.Trailblazer_Preservation, art: Trailblazer_Preservation_Splash_Art },
-
     { name: Characters.Welt, art: Welt_Splash_Art },
-
     { name: Characters.Yanqing, art: Yanqing_Splash_Art },
-
     { name: Characters.Yukon, art: Yukong_Splash_Art}
-
 ]
 
 export const data = {

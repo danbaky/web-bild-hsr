@@ -4,7 +4,7 @@
     background-color: var(--ultra-violet);
     color:rgb(0, 0, 0);
     border-radius: 10px;
-    border: 2px solid #1baace;
+    border: 2px solid #cebc1b;
 
     display: grid;
     grid-template-columns: 400px auto auto;
@@ -87,7 +87,7 @@ button{
 /* Стили для карточек */
 .card {
     background-color: var(--vista-blue);
-    border-radius: 10px;
+    border-radius: 0 15px 0 0;
     justify-content: center;
     align-items: center;
     display: flex;

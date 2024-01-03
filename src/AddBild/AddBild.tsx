@@ -1,4 +1,3 @@
-import { CharCard } from "../CharCard/CharCard";
 import React, { useState } from "react";
 import { Overlay } from "../OverLay/Overlay";
 
@@ -6,10 +5,13 @@ import cone from "./../CharCard/img/Light_Cone_An_Instant_Before_A_Gaze.webp";
 import { data, Characters, PlanarOrbs, Relics, allPlanarOrbs, allRelics, Hero, allHeros, Bild } from "./../Data/data";
 
 interface Iprops {
-    bildList:Bild[],
     setBildsList: React.Dispatch<React.SetStateAction<Bild[]>>
 }
-export const AddBild = ({bildList, setBildsList}:Iprops) => {
+
+function makeRandomID() : string{
+    return Math.floor(Date.now() + Math.random()*1000000000001).toString()
+}
+export const AddBild = ({ setBildsList }: Iprops) => {
 
 
     //Стейты для модальных окон
@@ -21,6 +23,7 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
 
     //состояние предметов + дефолтные значения
     const defaultBild: Bild = {
+        id: makeRandomID(),
         name: "",
         character: Characters.Dan_Heng__Imbibitor_Lunae,
         relic1: Relics.HunterOfGlacialForest,
@@ -42,42 +45,29 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
     const [textArea, setTextArea] = useState(bild.textInformation)
     const [textInput, setTextInput] = useState(bild.name)
 
-
-
     const addBildInList = () => {
-        setBildsList((cur) => [bild, ...cur])
-        console.log('Добавил в список', bild)
-        setBild(defaultBild)
+        console.log('Добавилю в список')
         console.log(bild)
+
+        setBildsList((cur) => {
+            console.log(typeof Object.values([bild, ...cur]))
+            return Object.values([bild, ...cur])})
+        setBild(defaultBild)
     }
-
-
     //Связываю все стейты с одинм. Видимо лучше было завести один bild без стейтов 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         setFirstRelic(bild.relic1)
         setSecondRelic(bild.relic2)
         setHero({
             name: bild.character,
-            art: data.Arts[`${bild.character}_Splash_Art`]})
+            art: data.Arts[`${bild.character}_Splash_Art`]
+        })
         setPlanar(bild.planar)
         setFirstRelic(bild.relic1)
         setTextArea(bild.textInformation)
 
         setTextInput(bild.name)
     }, [bild])
-
-
-
-    const saveTextInput = (text:string): void => {
-        setTextInput(text)
-        console.log(text)
-        console.log(textInput)
-
-    }
-    const saveTextArea = (text:string): void => {
-        setTextArea(text);
-        console.log('Поменял текст')
-    }
 
     const pickHero = (char: Hero) => {
         setHero(char)
@@ -96,8 +86,9 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
         setSecondRelic(rel)
         setOpenRelic2(false)
     }
-    React.useEffect(()=>{
+    React.useEffect(() => {
         setBild({
+            id: makeRandomID(),
             name: textInput,
             character: hero.name,
             relic1: firstRelic,
@@ -107,41 +98,41 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
             cone2: "cone2",
             textInformation: textArea
         })
-    },[textArea, textInput, firstRelic, secondRelic, planar, hero.name])
-    
+    }, [textArea, textInput, firstRelic, secondRelic, planar, hero.name])
+
     return (
         <div className="content">
             <div className="char_card" >
 
                 <div className="pic card">
-                    <img src={hero.art} width={400} onClick={() => setOpenHero(true)}/>
+                    <img alt={hero.name} src={hero.art} width={400} onClick={() => setOpenHero(true)} />
                     <h4>{hero.name}</h4>
-                    <input type="text" value={textInput} onChange={(e)=>setTextInput(e.target.value)} placeholder="Имя билда"/>
+                    <input type="text" value={textInput} onChange={(e) => setTextInput(e.target.value)} placeholder="Имя билда" />
                 </div>
 
                 <div className="text card">
-                    <textarea value={textArea} onChange={(e)=>setTextArea(e.target.value)} placeholder="Описание билда"/>
+                    <textarea value={textArea} onChange={(e) => setTextArea(e.target.value)} placeholder="Описание билда" />
                 </div>
 
                 <div className="cones">
                     <div className="item card">
-                    <img src={cone} width={150} />
+                        <img alt={cone} src={cone} width={150} />
 
                     </div>
                     <div className="item card">
-                        <img src={cone} width={150} />
+                        <img alt={cone} src={cone} width={150} />
 
                     </div>
                 </div>
                 <div className="items">
                     <div className="item card" onClick={() => setOpenRelic(true)}>
-                        <img src={data.Relics[firstRelic]} width={100} />
+                        <img alt={bild.relic1} src={data.Relics[firstRelic]} width={100} />
                     </div>
                     <div className="item card" onClick={() => setOpenRelic2(true)}>
-                        <img src={data.Relics[secondRelic]} width={100} />
+                        <img alt={bild.relic2} src={data.Relics[secondRelic]} width={100} />
                     </div>
                     <div className="item card" onClick={() => setOpenPlanar(true)}>
-                        <img src={data.PlanarOrbs[planar]} width={100} />
+                        <img alt={bild.planar} src={data.PlanarOrbs[planar]} width={100} />
                     </div>
                 </div>
             </div >
@@ -155,7 +146,7 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
                     allHeros.map((key) => {
                         return (
                             <div key={key.name} className="card" onClick={() => { pickHero(key) }}>
-                                <img src={key.art} width={100} />
+                                <img alt={key.name} src={key.art} width={100} />
                             </div>
                         )
                     })
@@ -167,7 +158,7 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
                     allPlanarOrbs.map((key) => {
                         return (
                             <div key={key} className="card" onClick={() => { pickPlanar(key) }}>
-                                <img src={data.PlanarOrbs[key]} width={100} />
+                                <img alt={key} src={data.PlanarOrbs[key]} width={100} />
                             </div>
                         )
                     })
@@ -179,7 +170,7 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
                     allRelics.map((key) => {
                         return (
                             <div key={key} className="card" onClick={() => { pickFirstRelic(key) }}>
-                                <img src={data.Relics[key]} width={100} />
+                                <img alt={key} src={data.Relics[key]} width={100} />
                             </div>
                         )
                     })
@@ -190,7 +181,7 @@ export const AddBild = ({bildList, setBildsList}:Iprops) => {
                     allRelics.map((key) => {
                         return (
                             <div key={key} className="card" onClick={() => { pickSecondRelic(key) }}>
-                                <img src={data.Relics[key]} width={100} />
+                                <img alt={key} src={data.Relics[key]} width={100} />
                             </div>
                         )
                     })
